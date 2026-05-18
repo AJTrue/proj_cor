@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cores</title>
+  </head>
+  <body id="container">
+    <div id="menu">
+      <h1>MENU</h1>
+      <p>
+        Digite:<br />
+        1 - verde<br />
+        2 - vermelho<br />
+        3 - azul<br />
+        4 - amarelo<br />
+        5 - Informe a cor
+      </p>
+      <input type="number" id="inp1" />
+      <input type="button" onclick="cor()" value="enviar" />
+      <input type="color" id="cor" style="visibility: hidden" />
+    </div>
+
+    <script>
+      function cor() {
+        var senha = Number(window.document.querySelector("input#inp1").value);
+        var cont = window.document.querySelector("body");
+        const inputCor = document.querySelector("#cor");
+        switch (senha) {
+          case 1:
+            cont.style.background = "green";
+            inputCor.style.visibility = "hidden";
+            break;
+
+          case 2:
+            cont.style.background = "red";
+            inputCor.style.visibility = "hidden";
+            break;
+
+          case 3:
+            cont.style.background = "blue";
+            inputCor.style.visibility = "hidden";
+            break;
+
+          case 4:
+            cont.style.background = "yellow";
+            inputCor.style.visibility = "hidden";
+            break;
+
+          case 5:
+            inputCor.style.visibility = "visible";
+            var cor = inputCor.value;
+            cont.style.background = cor;
+            break;
+
+          default:
+            alert("valor invalido");
+            location.reload();
+        }
+      }
+    </script>
+  </body>
+</html>
